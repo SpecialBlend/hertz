@@ -32,5 +32,7 @@
     "url": "https://github.com/SpecialBlend/hertz/issues"
   },
   "homepage": "https://github.com/SpecialBlend/hertz#readme",
-  "dependencies": {}
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
 }
