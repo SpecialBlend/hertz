@@ -1,6 +1,9 @@
+import * as R from 'ramda';
+
 import { generateSine } from './generate-sine';
 import { analyzeZCA } from './analyze-zca';
 import { nearestHalf } from './nearest-half';
+import { concatFloat32Arrays } from './concat-float32-array';
 
 describe('returns expected data for samples', () => {
     test('returns expected data for zero', () => {
@@ -72,4 +75,20 @@ describe('returns expected data for calculated samples', () => {
             });
         }
     }
+});
+
+describe('returns expected data for mixed samples', () => {
+    test('returns expected data for mixed sample', () => {
+        const samplingRate = 44100;
+        const frequencies = [0, 50, 60, 120, 240];
+        const size = samplingRate * 2;
+        const waves = frequencies.map(
+            frequency => generateSine(size, samplingRate, frequency)
+        );
+        const mixedWave = concatFloat32Arrays(waves);
+        const expectedNominalFrequency = R.sum(frequencies) / frequencies.length;
+        const calculatedFrequency = analyzeZCA(mixedWave, samplingRate);
+        const varience = Math.abs(calculatedFrequency - expectedNominalFrequency);
+        expect(varience).toBeLessThan(1);
+    });
 });
