@@ -6,7 +6,7 @@ export const concatFloat32Array = (first, second) => {
 };
 
 export const concatFloat32Arrays = ([head, ...rest]) => {
-    if (typeof rest === 'undefined') {
+    if (rest.length < 1) {
         return head;
     }
     if (rest.length > 1) {
