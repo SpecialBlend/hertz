@@ -1,10 +1,10 @@
-import index from './index';
+import { analyzeZCA, generateSine } from './index';
 
 describe('index.js', () => {
-    test('exports a function', () => {
-        expect(index).toBeInstanceOf(Function);
+    test('exports analyzeRCA', () => {
+        expect(analyzeZCA).toBeInstanceOf(Function);
     });
-    test('returns expected data', () => {
-        expect(index()).toBe('Hello, world');
+    test('exports generateSine', () => {
+        expect(generateSine).toBeInstanceOf(Function);
     });
 });
