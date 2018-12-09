@@ -16,7 +16,7 @@ export const analyzeZCA = (wave, sampleRate, zero = 0) => {
     for (let i = 0; i < wave.length; i++) {
         current = wave[i];
         if (state ^ current < zero) {
-            cycles += 1;
+            cycles++;
             state ^= 1;
         }
     }
