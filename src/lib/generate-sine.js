@@ -1,5 +1,5 @@
 /**
- * Generate a sine waveform
+ * Generate a sine waveform signal
  * @param {Number} size - wave size in bytes (e.g. 1024)
  * @param {Number} sampleRate - wave sample rate in Hz (e.g. 44100)
  * @param {Number} frequency - wave frequency in Hz (e.g. 60)

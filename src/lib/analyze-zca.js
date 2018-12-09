@@ -1,8 +1,8 @@
 /**
- * Analyze frequency of a waveform using the zero crossing algorithm.
+ * Analyze frequency of a signal using the zero crossing algorithm.
  * !! wave size should always be greater than or equal to sampleRate * 2 !!
  * !! sampleRate should always be greater than or equal to highest target frequency * 2 !!
- * @param {Float32Array} wave - waveform data
+ * @param {Float32Array} wave - signal data
  * @param {Number} sampleRate - sample rate
  * @param {Number} zero - the "zero" value to use as crossing threshold
  * @return {Number} - analyzed frequency in Hz rounded to the nearest 0.5
